@@ -1,0 +1,7 @@
+.header {
+  height: 12rem;
+  background-color: var(--color-primary);
+  color: var(--color-gray-light-1);
+  padding: 2.5rem;
+  font-size: 1.2rem;
+}

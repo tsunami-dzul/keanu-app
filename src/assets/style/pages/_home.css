@@ -1,0 +1,17 @@
+.home {
+  margin-top: 2rem;
+  height: 60vh;
+  background-color: var(--color-terciary);
+  border-radius: 1rem;
+  box-shadow: 5px 5px 1rem var(--color-gray-dark-2);
+
+  display: flex;
+  align-items: center;
+}
+
+.picture {
+  margin: 0 auto;
+  border: 1rem solid var(--color-gray-light-2);
+  height: 80%;
+  width: 40%;
+}

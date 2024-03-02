@@ -1,0 +1,12 @@
+.form {
+  padding: 4rem;
+  width: 40%;
+  height: 100%;
+  background-color: var(--color-secondary);
+  border-radius: 1rem 0 0 1rem;
+  color: var(--color-gray-light-1);
+}
+
+.form-group {
+  margin-top: 1.8rem;
+}
