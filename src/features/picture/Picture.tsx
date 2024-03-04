@@ -1,7 +1,7 @@
 interface PictureProps {
-  picture: string;
+  picture: string | undefined;
   loading: boolean;
-  error: string;
+  error: string | null;
 }
 
 export const Picture: React.FC<PictureProps> = ({ picture, loading, error }) => {
@@ -16,7 +16,7 @@ export const Picture: React.FC<PictureProps> = ({ picture, loading, error }) => 
 
   return (
     <div className='picture'>
-      <div className='svg-img' dangerouslySetInnerHTML={{ __html: picture }}></div>
+      <div className='svg-img' dangerouslySetInnerHTML={{ __html: picture ?? '' }}></div>
     </div>
   );
 };
