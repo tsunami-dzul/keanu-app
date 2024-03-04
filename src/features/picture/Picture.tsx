@@ -1,18 +1,13 @@
-import { request, gql } from 'graphql-request';
-import { usePicture } from '../../hooks/useQuery';
+interface PictureProps {
+  picture: string;
+  loading: boolean;
+  error: string;
+}
 
-const KEANU_QUERY = gql`
-  {
-    keanu(width: "800", height: "500") {
-      image
-    }
-  }
-`;
+export const Picture: React.FC<PictureProps> = ({ picture, loading, error }) => {
+  if (loading) return <div>Is loading...</div>;
 
-export const Picture = () => {
-  const { data, isLoading, error }: any = usePicture(KEANU_QUERY);
+  if (error) return <div>{error}</div>;
 
-  if (isLoading) return <div>Is loading...</div>;
-
-  return <div className='picture' dangerouslySetInnerHTML={{ __html: data?.keanu.image }}></div>;
+  return <div className='picture' dangerouslySetInnerHTML={{ __html: picture }}></div>;
 };
