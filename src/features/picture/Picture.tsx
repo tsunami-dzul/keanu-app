@@ -5,9 +5,18 @@ interface PictureProps {
 }
 
 export const Picture: React.FC<PictureProps> = ({ picture, loading, error }) => {
-  if (loading) return <div>Is loading...</div>;
+  if (loading)
+    return (
+      <div className='spinner'>
+        <span className='loader'></span>
+      </div>
+    );
 
   if (error) return <div>{error}</div>;
 
-  return <div className='picture' dangerouslySetInnerHTML={{ __html: picture }}></div>;
+  return (
+    <div className='picture'>
+      <div className='svg-img' dangerouslySetInnerHTML={{ __html: picture }}></div>
+    </div>
+  );
 };

@@ -1,6 +1,6 @@
 .home {
   margin-top: 2rem;
-  height: 60vh;
+  height: 75vh;
   background-color: var(--color-terciary);
   border-radius: 1rem;
   box-shadow: 5px 5px 1rem var(--color-gray-dark-2);
@@ -11,7 +11,16 @@
 
 .picture {
   margin: 0 auto;
-  border: 1rem solid var(--color-gray-light-2);
-  height: 80%;
-  width: 40%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  margin: 0 auto;
+}
+
+.svg-img {
+  box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.8);
 }
