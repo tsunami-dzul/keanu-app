@@ -1,16 +1,17 @@
-import { useSelector } from 'react-redux';
+import { useTypedSelector } from '../../hooks/useTypedSelectors';
 
 export const Picture: React.FC = () => {
-  const { picture, loading, error }: any = useSelector<any>((state) => state.keanu);
+  const { picture, loading, error } = useTypedSelector((state) => state.keanu);
 
-  if (loading)
+  if (loading) {
     return (
       <div className='spinner'>
         <span className='loader'></span>
       </div>
     );
+  }
 
-  if (error) return <div>{error}</div>;
+  if (error) return <div className='error'>{error}</div>;
 
   return (
     <div className='picture'>
