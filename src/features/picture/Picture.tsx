@@ -1,10 +1,8 @@
-interface PictureProps {
-  picture: string | undefined;
-  loading: boolean;
-  error: string | null;
-}
+import { useSelector } from 'react-redux';
 
-export const Picture: React.FC<PictureProps> = ({ picture, loading, error }) => {
+export const Picture: React.FC = () => {
+  const { picture, loading, error }: any = useSelector<any>((state) => state.keanu);
+
   if (loading)
     return (
       <div className='spinner'>

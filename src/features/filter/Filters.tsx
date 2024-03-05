@@ -1,17 +1,15 @@
+import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { Input } from '../../components/form/Input';
 import { Select } from '../../components/form/Select';
 import { Button } from '../../components/ui/Button';
 import { grayOptions, typeOptions } from '../../data/keanuOptions';
-import { gql } from 'graphql-request';
 import { formValidation } from '../../helpers/formValidation';
 import { IPictureSize } from '../../interfaces/IPictureSize';
 
-interface FiltersProps {
-  onFilter: (query: string) => void;
-}
+export const Filters: React.FC = () => {
+  const dispatch = useDispatch();
 
-export const Filters: React.FC<FiltersProps> = ({ onFilter }) => {
   const [formFilters, setFormFilters] = useState<IPictureSize>({
     width: 200,
     height: 200,
@@ -51,13 +49,10 @@ export const Filters: React.FC<FiltersProps> = ({ onFilter }) => {
     setError('');
 
     if (isFormValid) {
-      onFilter(gql`
-        {
-            keanu(${query}) 
-            {
-            image
-            }
-        }`);
+      dispatch({
+        type: 'FETCH_PICTURE_REQUEST',
+        payload: query,
+      });
     } else {
       setError('Width and height must be grater than 0. And for a better experience grater or equal to 100');
     }

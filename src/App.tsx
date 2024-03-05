@@ -1,20 +1,13 @@
+import { Provider } from 'react-redux';
 import './assets/style/main.css';
 import { Content } from './layout/Content';
-import { QueryClient, QueryClientProvider } from 'react-query';
-
-const client = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: Infinity,
-    },
-  },
-});
+import { store } from './store/store';
 
 function App() {
   return (
-    <QueryClientProvider client={client}>
+    <Provider store={store}>
       <Content />
-    </QueryClientProvider>
+    </Provider>
   );
 }
 
