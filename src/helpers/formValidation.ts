@@ -7,3 +7,11 @@ export const formValidation = (formItems: IPictureSize) => {
 
   return false;
 };
+
+export const sizeValidation = (formItems: IPictureSize) => {
+  if (formItems.width >= 800 || formItems.height >= 800) {
+    return false;
+  }
+
+  return true;
+};
