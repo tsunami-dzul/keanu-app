@@ -22,7 +22,7 @@ label {
   width: 100%;
 }
 
-.error {
+.errorField {
   font-size: 1.4rem;
   margin-top: 5px;
   color: var(--color-terciary);

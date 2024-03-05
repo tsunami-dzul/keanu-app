@@ -17,7 +17,7 @@ export const Input: React.FC<InputProps> = (props) => {
       <label htmlFor={label}>{label}</label>
       <input {...rest} onChange={onChange} />
 
-      {error && <p className='error'>{error}</p>}
+      {error && <p className='errorField'>{error}</p>}
     </>
   );
 };
